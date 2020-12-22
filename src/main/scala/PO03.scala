@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-object PO3 {
+object PO03 {
   @tailrec
   def nth[T](n: Int, seq: Seq[T]): T = (n, seq) match {
     case (0, h::_) => h

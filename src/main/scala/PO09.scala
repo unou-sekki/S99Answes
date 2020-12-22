@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-object PO9 {
+object PO09 {
   def pack[T](ls: List[T]): List[List[T]] = {
     if (ls.isEmpty) List(List())
     else {

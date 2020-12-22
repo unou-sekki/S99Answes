@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-object PO4 {
+object PO04 {
   def length[T](seq: Seq[T]): Int = {
     @tailrec
     def lengthRec(count: Int, seq: Seq[T]): Int = seq match {
