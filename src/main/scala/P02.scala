@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-object PO02 {
+object P02 {
   @tailrec
   def penultimate(seq: Seq[Int]): Int = seq match {
     case h :: _ :: Nil => h

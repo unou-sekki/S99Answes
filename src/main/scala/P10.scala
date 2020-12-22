@@ -1,9 +1,6 @@
 import scala.annotation.tailrec
 
-object PO11 {
-  def encodeModified[T](ls: List[T]): List[Any] = {
-    encode(ls).map(r => if (r._1 == 1)r._2 else r)
-  }
+object P10 {
   def encode[T](ls: List[T]): List[(Int, T)] = {
     pack(ls).map(r => (r.length, r.head))
   }
@@ -14,7 +11,6 @@ object PO11 {
       if (next == Nil) List(packed)
       else packed :: pack(next)
     }
-
   }
   @tailrec
   def sep[T](packed: List[T], ls: List[T], target: T): (List[T], List[T]) = ls match{
