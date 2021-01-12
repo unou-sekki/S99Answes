@@ -13,6 +13,7 @@ object P27 {
 
   def group[T](size: List[Int], ls: List[T]): List[List[List[T]]] = size match {
     case Nil => List(Nil)
-    case h :: tail => combinations(h, ls).flatMap(v => group(tail, ls diff v).map(v :: _))
+    case h :: tail =>
+      combinations(h, ls).flatMap(v => group(tail, ls diff v).map(v :: _))
   }
 }

@@ -9,9 +9,12 @@ object P28 {
 
   def lSortFreq[T](ls: List[List[T]]): List[List[T]] = {
     @tailrec
-    def pack(ls: List[List[T]], result: List[(List[List[T]], Int)]): List[(List[List[T]], Int)] = ls match {
+    def pack(
+        ls: List[List[T]],
+        result: List[(List[List[T]], Int)]
+    ): List[(List[List[T]], Int)] = ls match {
       case Nil => result
-      case list@h :: _ =>
+      case list @ h :: _ =>
         val (packed, tail) = list.span(h.length == _.length)
         pack(tail, (packed, packed.length) :: result)
     }

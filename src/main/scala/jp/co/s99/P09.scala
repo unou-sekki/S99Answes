@@ -13,10 +13,11 @@ object P09 {
   }
 
   @tailrec
-  def sep[T](packed: List[T], ls: List[T], target: T): (List[T], List[T]) = ls match {
-    case Nil => (packed, Nil)
-    case h :: tail if target == h => sep(h :: packed, tail, target)
-    case _ :: _ => (packed, ls)
-  }
+  def sep[T](packed: List[T], ls: List[T], target: T): (List[T], List[T]) =
+    ls match {
+      case Nil                      => (packed, Nil)
+      case h :: tail if target == h => sep(h :: packed, tail, target)
+      case _ :: _                   => (packed, ls)
+    }
 
 }
